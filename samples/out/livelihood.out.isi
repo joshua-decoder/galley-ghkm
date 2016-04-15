@@ -1,0 +1,9 @@
+dt("these") -> "这些"
+nn("livelihood") -> "生活"
+nns("issues") -> "问题"
+np(jj("hong") nn("kong")) -> "港" "市民"
+np(np(dt("the") jj("whole") x0:nn) pp(in("of") x1:np)) -> "全" x1 "的" x0
+np(x0:dt x1:nns) -> x0 x1
+s(cc("and") x0:np x1:vp) -> x0 x1
+vbd("affected") -> "影响"
+vp(x0:vbd x1:np) -> x0 x1

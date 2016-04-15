@@ -1,0 +1,14 @@
+jj("collapsed") -> "倒塌"
+jj("collapsed") -> "倒塌" "的"
+nn("rescue") -> "救援"
+nns("houses") -> "房屋"
+nns("houses") -> "的" "房屋"
+nns("survivors") -> "生还者"
+nns("workers") -> "人员"
+np(x0:jj x1:nns) -> x0 "的" x1
+np(x0:jj x1:nns) -> x0 x1
+np(x0:nn x1:nns) -> x0 x1
+np(x0:nns) -> x0
+pp(in("in") x0:np) -> "在" x0 "里"
+s(x0:np x1:vp) -> x0 x1
+vp(vbp("search") pp(in("for") x0:np) x1:pp) -> x1 "寻找" x0

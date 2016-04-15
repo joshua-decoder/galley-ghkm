@@ -1,0 +1,388 @@
+.(".") -> "."
+dt("these") -> "这"
+nnp("france") -> "法国"
+nnp("france") -> "法国" "的"
+nns("astronauts") -> "宇航" "员"
+nns("astronauts") -> "的" "宇航" "员"
+np(dt("these") cd("7") nns("people")) -> "这" "7人"
+np(nnp("france")) -> "法国"
+np(nnp("france")) -> "法国" "的"
+np(nns("astronauts")) -> "宇航" "员"
+np(nns("astronauts")) -> "的" "宇航" "员"
+np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france"))))) -> "来自" "法国" "的" "宇航" "员"
+np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp)))) -> "来自" x0 "宇航" "员"
+np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp)))) -> "来自" x0 "的" "宇航" "员"
+np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np))) -> "来自" x0 "宇航" "员"
+np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np))) -> "来自" x0 "的" "宇航" "员"
+np(np(nns("astronauts")) x0:vp) -> x0 "宇航" "员"
+np(np(nns("astronauts")) x0:vp) -> x0 "的" "宇航" "员"
+np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france"))))) -> "来自" "法国" "的" x0
+np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france"))))) -> "来自" "法国" x0
+np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp)))) -> "来自" x1 "的" x0
+np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp)))) -> "来自" x1 x0
+np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np))) -> "来自" x1 "的" x0
+np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np))) -> "来自" x1 x0
+np(np(x0:nns) x1:vp) -> x1 "的" x0
+np(np(x0:nns) x1:vp) -> x1 x0
+np(x0:dt cd("7") nns("people")) -> x0 "7人"
+np(x0:nnp) -> x0
+np(x0:nnp) -> x0 "的"
+np(x0:nns) -> "的" x0
+np(x0:nns) -> x0
+np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france"))))) -> "来自" "法国" "的" x0
+np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france"))))) -> "来自" "法国" x0
+np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp)))) -> "来自" x1 "的" x0
+np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp)))) -> "来自" x1 x0
+np(x0:np vp(vbg("coming") pp(in("from") x1:np))) -> "来自" x1 "的" x0
+np(x0:np vp(vbg("coming") pp(in("from") x1:np))) -> "来自" x1 x0
+np(x0:np x1:vp) -> x1 "的" x0
+np(x0:np x1:vp) -> x1 x0
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" "中包括" "来自" "法国" "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x0:.) -> "这" "7人" "中包括" "来自" "法国" "的" "宇航" "员" x0
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp))))) .(".")) -> "这" "7人" "中包括" "来自" x0 "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp))))) .(".")) -> "这" "7人" "中包括" "来自" x0 "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp))))) x1:.) -> "这" "7人" "中包括" "来自" x0 "宇航" "员" x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp))))) x1:.) -> "这" "7人" "中包括" "来自" x0 "的" "宇航" "员" x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np)))) .(".")) -> "这" "7人" "中包括" "来自" x0 "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np)))) .(".")) -> "这" "7人" "中包括" "来自" x0 "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np)))) x1:.) -> "这" "7人" "中包括" "来自" x0 "宇航" "员" x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np)))) x1:.) -> "这" "7人" "中包括" "来自" x0 "的" "宇航" "员" x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x0:vp)) .(".")) -> "这" "7人" "中包括" x0 "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x0:vp)) .(".")) -> "这" "7人" "中包括" x0 "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x0:vp)) x1:.) -> "这" "7人" "中包括" x0 "宇航" "员" x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x0:vp)) x1:.) -> "这" "7人" "中包括" x0 "的" "宇航" "员" x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" "中包括" "来自" "法国" "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" "中包括" "来自" "法国" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x1:.) -> "这" "7人" "中包括" "来自" "法国" "的" x0 x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x1:.) -> "这" "7人" "中包括" "来自" "法国" x0 x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> "这" "7人" "中包括" "来自" x1 "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> "这" "7人" "中包括" "来自" x1 x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> "这" "7人" "中包括" "来自" x1 "的" x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> "这" "7人" "中包括" "来自" x1 x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> "这" "7人" "中包括" "来自" x1 "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> "这" "7人" "中包括" "来自" x1 x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> "这" "7人" "中包括" "来自" x1 "的" x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> "这" "7人" "中包括" "来自" x1 x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) x1:vp)) .(".")) -> "这" "7人" "中包括" x1 "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) x1:vp)) .(".")) -> "这" "7人" "中包括" x1 x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) x1:vp)) x2:.) -> "这" "7人" "中包括" x1 "的" x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(np(x0:nns) x1:vp)) x2:.) -> "这" "7人" "中包括" x1 x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" "中包括" "来自" "法国" "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" "中包括" "来自" "法国" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x1:.) -> "这" "7人" "中包括" "来自" "法国" "的" x0 x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x1:.) -> "这" "7人" "中包括" "来自" "法国" x0 x1
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> "这" "7人" "中包括" "来自" x1 "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> "这" "7人" "中包括" "来自" x1 x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> "这" "7人" "中包括" "来自" x1 "的" x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> "这" "7人" "中包括" "来自" x1 x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> "这" "7人" "中包括" "来自" x1 "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> "这" "7人" "中包括" "来自" x1 x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> "这" "7人" "中包括" "来自" x1 "的" x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> "这" "7人" "中包括" "来自" x1 x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np x1:vp)) .(".")) -> "这" "7人" "中包括" x1 "的" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np x1:vp)) .(".")) -> "这" "7人" "中包括" x1 x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np x1:vp)) x2:.) -> "这" "7人" "中包括" x1 "的" x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") np(x0:np x1:vp)) x2:.) -> "这" "7人" "中包括" x1 x0 x2
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") x0:np) .(".")) -> "这" "7人" "中包括" x0 "."
+s(np(dt("these") cd("7") nns("people")) vp(vbp("include") x0:np) x1:.) -> "这" "7人" "中包括" x0 x1
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" x0 "来自" "法国" "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x1:.) -> "这" "7人" x0 "来自" "法国" "的" "宇航" "员" x1
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> "这" "7人" x0 "来自" x1 "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> "这" "7人" x0 "来自" x1 "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> "这" "7人" x0 "来自" x1 "宇航" "员" x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> "这" "7人" x0 "来自" x1 "的" "宇航" "员" x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> "这" "7人" x0 "来自" x1 "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> "这" "7人" x0 "来自" x1 "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> "这" "7人" x0 "来自" x1 "宇航" "员" x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> "这" "7人" x0 "来自" x1 "的" "宇航" "员" x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) x1:vp)) .(".")) -> "这" "7人" x0 x1 "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) x1:vp)) .(".")) -> "这" "7人" x0 x1 "的" "宇航" "员" "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) x1:vp)) x2:.) -> "这" "7人" x0 x1 "宇航" "员" x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(nns("astronauts")) x1:vp)) x2:.) -> "这" "7人" x0 x1 "的" "宇航" "员" x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" x0 "来自" "法国" "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" x0 "来自" "法国" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> "这" "7人" x0 "来自" "法国" "的" x1 x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> "这" "7人" x0 "来自" "法国" x1 x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> "这" "7人" x0 "来自" x2 "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> "这" "7人" x0 "来自" x2 x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> "这" "7人" x0 "来自" x2 "的" x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> "这" "7人" x0 "来自" x2 x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> "这" "7人" x0 "来自" x2 "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> "这" "7人" x0 "来自" x2 x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> "这" "7人" x0 "来自" x2 "的" x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> "这" "7人" x0 "来自" x2 x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) x2:vp)) .(".")) -> "这" "7人" x0 x2 "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) x2:vp)) .(".")) -> "这" "7人" x0 x2 x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) x2:vp)) x3:.) -> "这" "7人" x0 x2 "的" x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(np(x1:nns) x2:vp)) x3:.) -> "这" "7人" x0 x2 x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" x0 "来自" "法国" "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> "这" "7人" x0 "来自" "法国" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> "这" "7人" x0 "来自" "法国" "的" x1 x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> "这" "7人" x0 "来自" "法国" x1 x2
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> "这" "7人" x0 "来自" x2 "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> "这" "7人" x0 "来自" x2 x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> "这" "7人" x0 "来自" x2 "的" x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> "这" "7人" x0 "来自" x2 x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> "这" "7人" x0 "来自" x2 "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> "这" "7人" x0 "来自" x2 x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> "这" "7人" x0 "来自" x2 "的" x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> "这" "7人" x0 "来自" x2 x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np x2:vp)) .(".")) -> "这" "7人" x0 x2 "的" x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np x2:vp)) .(".")) -> "这" "7人" x0 x2 x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np x2:vp)) x3:.) -> "这" "7人" x0 x2 "的" x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp np(x1:np x2:vp)) x3:.) -> "这" "7人" x0 x2 x1 x3
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp x1:np) .(".")) -> "这" "7人" x0 x1 "."
+s(np(dt("these") cd("7") nns("people")) vp(x0:vbp x1:np) x2:.) -> "这" "7人" x0 x1 x2
+s(np(dt("these") cd("7") nns("people")) x0:vp .(".")) -> "这" "7人" x0 "."
+s(np(dt("these") cd("7") nns("people")) x0:vp x1:.) -> "这" "7人" x0 x1
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" "中包括" "来自" "法国" "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x1:.) -> x0 "7人" "中包括" "来自" "法国" "的" "宇航" "员" x1
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> x0 "7人" "中包括" "来自" x1 "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> x0 "7人" "中包括" "来自" x1 "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> x0 "7人" "中包括" "来自" x1 "宇航" "员" x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> x0 "7人" "中包括" "来自" x1 "的" "宇航" "员" x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> x0 "7人" "中包括" "来自" x1 "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> x0 "7人" "中包括" "来自" x1 "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> x0 "7人" "中包括" "来自" x1 "宇航" "员" x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> x0 "7人" "中包括" "来自" x1 "的" "宇航" "员" x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x1:vp)) .(".")) -> x0 "7人" "中包括" x1 "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x1:vp)) .(".")) -> x0 "7人" "中包括" x1 "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x1:vp)) x2:.) -> x0 "7人" "中包括" x1 "宇航" "员" x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(nns("astronauts")) x1:vp)) x2:.) -> x0 "7人" "中包括" x1 "的" "宇航" "员" x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" "中包括" "来自" "法国" "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" "中包括" "来自" "法国" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "7人" "中包括" "来自" "法国" "的" x1 x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "7人" "中包括" "来自" "法国" x1 x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "7人" "中包括" "来自" x2 "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "7人" "中包括" "来自" x2 x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "7人" "中包括" "来自" x2 "的" x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "7人" "中包括" "来自" x2 x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "7人" "中包括" "来自" x2 "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "7人" "中包括" "来自" x2 x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "7人" "中包括" "来自" x2 "的" x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "7人" "中包括" "来自" x2 x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) x2:vp)) .(".")) -> x0 "7人" "中包括" x2 "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) x2:vp)) .(".")) -> x0 "7人" "中包括" x2 x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) x2:vp)) x3:.) -> x0 "7人" "中包括" x2 "的" x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(np(x1:nns) x2:vp)) x3:.) -> x0 "7人" "中包括" x2 x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" "中包括" "来自" "法国" "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" "中包括" "来自" "法国" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "7人" "中包括" "来自" "法国" "的" x1 x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "7人" "中包括" "来自" "法国" x1 x2
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "7人" "中包括" "来自" x2 "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "7人" "中包括" "来自" x2 x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "7人" "中包括" "来自" x2 "的" x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "7人" "中包括" "来自" x2 x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "7人" "中包括" "来自" x2 "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "7人" "中包括" "来自" x2 x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "7人" "中包括" "来自" x2 "的" x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "7人" "中包括" "来自" x2 x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np x2:vp)) .(".")) -> x0 "7人" "中包括" x2 "的" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np x2:vp)) .(".")) -> x0 "7人" "中包括" x2 x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np x2:vp)) x3:.) -> x0 "7人" "中包括" x2 "的" x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") np(x1:np x2:vp)) x3:.) -> x0 "7人" "中包括" x2 x1 x3
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") x1:np) .(".")) -> x0 "7人" "中包括" x1 "."
+s(np(x0:dt cd("7") nns("people")) vp(vbp("include") x1:np) x2:.) -> x0 "7人" "中包括" x1 x2
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" x1 "来自" "法国" "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "7人" x1 "来自" "法国" "的" "宇航" "员" x2
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "7人" x1 "来自" x2 "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "7人" x1 "来自" x2 "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "7人" x1 "来自" x2 "宇航" "员" x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "7人" x1 "来自" x2 "的" "宇航" "员" x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "7人" x1 "来自" x2 "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "7人" x1 "来自" x2 "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "7人" x1 "来自" x2 "宇航" "员" x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "7人" x1 "来自" x2 "的" "宇航" "员" x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) x2:vp)) .(".")) -> x0 "7人" x1 x2 "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) x2:vp)) .(".")) -> x0 "7人" x1 x2 "的" "宇航" "员" "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) x2:vp)) x3:.) -> x0 "7人" x1 x2 "宇航" "员" x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(nns("astronauts")) x2:vp)) x3:.) -> x0 "7人" x1 x2 "的" "宇航" "员" x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" x1 "来自" "法国" "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" x1 "来自" "法国" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 "7人" x1 "来自" "法国" "的" x2 x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 "7人" x1 "来自" "法国" x2 x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 "7人" x1 "来自" x3 "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 "7人" x1 "来自" x3 x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 "7人" x1 "来自" x3 "的" x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 "7人" x1 "来自" x3 x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 "7人" x1 "来自" x3 "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 "7人" x1 "来自" x3 x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 "7人" x1 "来自" x3 "的" x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 "7人" x1 "来自" x3 x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) x3:vp)) .(".")) -> x0 "7人" x1 x3 "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) x3:vp)) .(".")) -> x0 "7人" x1 x3 x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) x3:vp)) x4:.) -> x0 "7人" x1 x3 "的" x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(np(x2:nns) x3:vp)) x4:.) -> x0 "7人" x1 x3 x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" x1 "来自" "法国" "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "7人" x1 "来自" "法国" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 "7人" x1 "来自" "法国" "的" x2 x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 "7人" x1 "来自" "法国" x2 x3
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 "7人" x1 "来自" x3 "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 "7人" x1 "来自" x3 x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 "7人" x1 "来自" x3 "的" x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 "7人" x1 "来自" x3 x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 "7人" x1 "来自" x3 "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 "7人" x1 "来自" x3 x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 "7人" x1 "来自" x3 "的" x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 "7人" x1 "来自" x3 x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np x3:vp)) .(".")) -> x0 "7人" x1 x3 "的" x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np x3:vp)) .(".")) -> x0 "7人" x1 x3 x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np x3:vp)) x4:.) -> x0 "7人" x1 x3 "的" x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp np(x2:np x3:vp)) x4:.) -> x0 "7人" x1 x3 x2 x4
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp x2:np) .(".")) -> x0 "7人" x1 x2 "."
+s(np(x0:dt cd("7") nns("people")) vp(x1:vbp x2:np) x3:.) -> x0 "7人" x1 x2 x3
+s(np(x0:dt cd("7") nns("people")) x1:vp .(".")) -> x0 "7人" x1 "."
+s(np(x0:dt cd("7") nns("people")) x1:vp x2:.) -> x0 "7人" x1 x2
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "中包括" "来自" "法国" "的" "宇航" "员" "."
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x1:.) -> x0 "中包括" "来自" "法国" "的" "宇航" "员" x1
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> x0 "中包括" "来自" x1 "宇航" "员" "."
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) .(".")) -> x0 "中包括" "来自" x1 "的" "宇航" "员" "."
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> x0 "中包括" "来自" x1 "宇航" "员" x2
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) x2:.) -> x0 "中包括" "来自" x1 "的" "宇航" "员" x2
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> x0 "中包括" "来自" x1 "宇航" "员" "."
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) .(".")) -> x0 "中包括" "来自" x1 "的" "宇航" "员" "."
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> x0 "中包括" "来自" x1 "宇航" "员" x2
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) x2:.) -> x0 "中包括" "来自" x1 "的" "宇航" "员" x2
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) x1:vp)) .(".")) -> x0 "中包括" x1 "宇航" "员" "."
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) x1:vp)) .(".")) -> x0 "中包括" x1 "的" "宇航" "员" "."
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) x1:vp)) x2:.) -> x0 "中包括" x1 "宇航" "员" x2
+s(x0:np vp(vbp("include") np(np(nns("astronauts")) x1:vp)) x2:.) -> x0 "中包括" x1 "的" "宇航" "员" x2
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "中包括" "来自" "法国" "的" x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "中包括" "来自" "法国" x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "中包括" "来自" "法国" "的" x1 x2
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "中包括" "来自" "法国" x1 x2
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "中包括" "来自" x2 "的" x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "中包括" "来自" x2 x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "中包括" "来自" x2 "的" x1 x3
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "中包括" "来自" x2 x1 x3
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "中包括" "来自" x2 "的" x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "中包括" "来自" x2 x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "中包括" "来自" x2 "的" x1 x3
+s(x0:np vp(vbp("include") np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "中包括" "来自" x2 x1 x3
+s(x0:np vp(vbp("include") np(np(x1:nns) x2:vp)) .(".")) -> x0 "中包括" x2 "的" x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) x2:vp)) .(".")) -> x0 "中包括" x2 x1 "."
+s(x0:np vp(vbp("include") np(np(x1:nns) x2:vp)) x3:.) -> x0 "中包括" x2 "的" x1 x3
+s(x0:np vp(vbp("include") np(np(x1:nns) x2:vp)) x3:.) -> x0 "中包括" x2 x1 x3
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "中包括" "来自" "法国" "的" x1 "."
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 "中包括" "来自" "法国" x1 "."
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "中包括" "来自" "法国" "的" x1 x2
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 "中包括" "来自" "法国" x1 x2
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "中包括" "来自" x2 "的" x1 "."
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 "中包括" "来自" x2 x1 "."
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "中包括" "来自" x2 "的" x1 x3
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 "中包括" "来自" x2 x1 x3
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "中包括" "来自" x2 "的" x1 "."
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 "中包括" "来自" x2 x1 "."
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "中包括" "来自" x2 "的" x1 x3
+s(x0:np vp(vbp("include") np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 "中包括" "来自" x2 x1 x3
+s(x0:np vp(vbp("include") np(x1:np x2:vp)) .(".")) -> x0 "中包括" x2 "的" x1 "."
+s(x0:np vp(vbp("include") np(x1:np x2:vp)) .(".")) -> x0 "中包括" x2 x1 "."
+s(x0:np vp(vbp("include") np(x1:np x2:vp)) x3:.) -> x0 "中包括" x2 "的" x1 x3
+s(x0:np vp(vbp("include") np(x1:np x2:vp)) x3:.) -> x0 "中包括" x2 x1 x3
+s(x0:np vp(vbp("include") x1:np) .(".")) -> x0 "中包括" x1 "."
+s(x0:np vp(vbp("include") x1:np) x2:.) -> x0 "中包括" x1 x2
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 x1 "来自" "法国" "的" "宇航" "员" "."
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x2:.) -> x0 x1 "来自" "法国" "的" "宇航" "员" x2
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 x1 "来自" x2 "宇航" "员" "."
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) .(".")) -> x0 x1 "来自" x2 "的" "宇航" "员" "."
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 x1 "来自" x2 "宇航" "员" x3
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x2:nnp))))) x3:.) -> x0 x1 "来自" x2 "的" "宇航" "员" x3
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 x1 "来自" x2 "宇航" "员" "."
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) .(".")) -> x0 x1 "来自" x2 "的" "宇航" "员" "."
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 x1 "来自" x2 "宇航" "员" x3
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x2:np)))) x3:.) -> x0 x1 "来自" x2 "的" "宇航" "员" x3
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) x2:vp)) .(".")) -> x0 x1 x2 "宇航" "员" "."
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) x2:vp)) .(".")) -> x0 x1 x2 "的" "宇航" "员" "."
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) x2:vp)) x3:.) -> x0 x1 x2 "宇航" "员" x3
+s(x0:np vp(x1:vbp np(np(nns("astronauts")) x2:vp)) x3:.) -> x0 x1 x2 "的" "宇航" "员" x3
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 x1 "来自" "法国" "的" x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 x1 "来自" "法国" x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 x1 "来自" "法国" "的" x2 x3
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 x1 "来自" "法国" x2 x3
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 x1 "来自" x3 "的" x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 x1 "来自" x3 x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 x1 "来自" x3 "的" x2 x4
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 x1 "来自" x3 x2 x4
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 x1 "来自" x3 "的" x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 x1 "来自" x3 x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 x1 "来自" x3 "的" x2 x4
+s(x0:np vp(x1:vbp np(np(x2:nns) vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 x1 "来自" x3 x2 x4
+s(x0:np vp(x1:vbp np(np(x2:nns) x3:vp)) .(".")) -> x0 x1 x3 "的" x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) x3:vp)) .(".")) -> x0 x1 x3 x2 "."
+s(x0:np vp(x1:vbp np(np(x2:nns) x3:vp)) x4:.) -> x0 x1 x3 "的" x2 x4
+s(x0:np vp(x1:vbp np(np(x2:nns) x3:vp)) x4:.) -> x0 x1 x3 x2 x4
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 x1 "来自" "法国" "的" x2 "."
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) .(".")) -> x0 x1 "来自" "法国" x2 "."
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 x1 "来自" "法国" "的" x2 x3
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) x3:.) -> x0 x1 "来自" "法国" x2 x3
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 x1 "来自" x3 "的" x2 "."
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) .(".")) -> x0 x1 "来自" x3 x2 "."
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 x1 "来自" x3 "的" x2 x4
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") np(x3:nnp))))) x4:.) -> x0 x1 "来自" x3 x2 x4
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 x1 "来自" x3 "的" x2 "."
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) .(".")) -> x0 x1 "来自" x3 x2 "."
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 x1 "来自" x3 "的" x2 x4
+s(x0:np vp(x1:vbp np(x2:np vp(vbg("coming") pp(in("from") x3:np)))) x4:.) -> x0 x1 "来自" x3 x2 x4
+s(x0:np vp(x1:vbp np(x2:np x3:vp)) .(".")) -> x0 x1 x3 "的" x2 "."
+s(x0:np vp(x1:vbp np(x2:np x3:vp)) .(".")) -> x0 x1 x3 x2 "."
+s(x0:np vp(x1:vbp np(x2:np x3:vp)) x4:.) -> x0 x1 x3 "的" x2 x4
+s(x0:np vp(x1:vbp np(x2:np x3:vp)) x4:.) -> x0 x1 x3 x2 x4
+s(x0:np vp(x1:vbp x2:np) .(".")) -> x0 x1 x2 "."
+s(x0:np vp(x1:vbp x2:np) x3:.) -> x0 x1 x2 x3
+s(x0:np x1:vp .(".")) -> x0 x1 "."
+s(x0:np x1:vp x2:.) -> x0 x1 x2
+vbp("include") -> "中包括"
+vp(vbg("coming") pp(in("from") np(nnp("france")))) -> "来自" "法国"
+vp(vbg("coming") pp(in("from") np(nnp("france")))) -> "来自" "法国" "的"
+vp(vbg("coming") pp(in("from") np(x0:nnp))) -> "来自" x0
+vp(vbg("coming") pp(in("from") np(x0:nnp))) -> "来自" x0 "的"
+vp(vbg("coming") pp(in("from") x0:np)) -> "来自" x0
+vp(vbg("coming") pp(in("from") x0:np)) -> "来自" x0 "的"
+vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> "中包括" "来自" "法国" "的" "宇航" "员"
+vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp))))) -> "中包括" "来自" x0 "宇航" "员"
+vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x0:nnp))))) -> "中包括" "来自" x0 "的" "宇航" "员"
+vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np)))) -> "中包括" "来自" x0 "宇航" "员"
+vp(vbp("include") np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x0:np)))) -> "中包括" "来自" x0 "的" "宇航" "员"
+vp(vbp("include") np(np(nns("astronauts")) x0:vp)) -> "中包括" x0 "宇航" "员"
+vp(vbp("include") np(np(nns("astronauts")) x0:vp)) -> "中包括" x0 "的" "宇航" "员"
+vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> "中包括" "来自" "法国" "的" x0
+vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> "中包括" "来自" "法国" x0
+vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp))))) -> "中包括" "来自" x1 "的" x0
+vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") np(x1:nnp))))) -> "中包括" "来自" x1 x0
+vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np)))) -> "中包括" "来自" x1 "的" x0
+vp(vbp("include") np(np(x0:nns) vp(vbg("coming") pp(in("from") x1:np)))) -> "中包括" "来自" x1 x0
+vp(vbp("include") np(np(x0:nns) x1:vp)) -> "中包括" x1 "的" x0
+vp(vbp("include") np(np(x0:nns) x1:vp)) -> "中包括" x1 x0
+vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> "中包括" "来自" "法国" "的" x0
+vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> "中包括" "来自" "法国" x0
+vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp))))) -> "中包括" "来自" x1 "的" x0
+vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") np(x1:nnp))))) -> "中包括" "来自" x1 x0
+vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") x1:np)))) -> "中包括" "来自" x1 "的" x0
+vp(vbp("include") np(x0:np vp(vbg("coming") pp(in("from") x1:np)))) -> "中包括" "来自" x1 x0
+vp(vbp("include") np(x0:np x1:vp)) -> "中包括" x1 "的" x0
+vp(vbp("include") np(x0:np x1:vp)) -> "中包括" x1 x0
+vp(vbp("include") x0:np) -> "中包括" x0
+vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> x0 "来自" "法国" "的" "宇航" "员"
+vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) -> x0 "来自" x1 "宇航" "员"
+vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") np(x1:nnp))))) -> x0 "来自" x1 "的" "宇航" "员"
+vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) -> x0 "来自" x1 "宇航" "员"
+vp(x0:vbp np(np(nns("astronauts")) vp(vbg("coming") pp(in("from") x1:np)))) -> x0 "来自" x1 "的" "宇航" "员"
+vp(x0:vbp np(np(nns("astronauts")) x1:vp)) -> x0 x1 "宇航" "员"
+vp(x0:vbp np(np(nns("astronauts")) x1:vp)) -> x0 x1 "的" "宇航" "员"
+vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> x0 "来自" "法国" "的" x1
+vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> x0 "来自" "法国" x1
+vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) -> x0 "来自" x2 "的" x1
+vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") np(x2:nnp))))) -> x0 "来自" x2 x1
+vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) -> x0 "来自" x2 "的" x1
+vp(x0:vbp np(np(x1:nns) vp(vbg("coming") pp(in("from") x2:np)))) -> x0 "来自" x2 x1
+vp(x0:vbp np(np(x1:nns) x2:vp)) -> x0 x2 "的" x1
+vp(x0:vbp np(np(x1:nns) x2:vp)) -> x0 x2 x1
+vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> x0 "来自" "法国" "的" x1
+vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(nnp("france")))))) -> x0 "来自" "法国" x1
+vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) -> x0 "来自" x2 "的" x1
+vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") np(x2:nnp))))) -> x0 "来自" x2 x1
+vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) -> x0 "来自" x2 "的" x1
+vp(x0:vbp np(x1:np vp(vbg("coming") pp(in("from") x2:np)))) -> x0 "来自" x2 x1
+vp(x0:vbp np(x1:np x2:vp)) -> x0 x2 "的" x1
+vp(x0:vbp np(x1:np x2:vp)) -> x0 x2 x1
+vp(x0:vbp x1:np) -> x0 x1

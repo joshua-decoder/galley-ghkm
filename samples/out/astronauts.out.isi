@@ -1,0 +1,18 @@
+.(".") -> "."
+dt("these") -> "这"
+nnp("france") -> "法国"
+nnp("france") -> "法国" "的"
+nns("astronauts") -> "宇航" "员"
+nns("astronauts") -> "的" "宇航" "员"
+np(x0:dt cd("7") nns("people")) -> x0 "7人"
+np(x0:nnp) -> x0
+np(x0:nnp) -> x0 "的"
+np(x0:nns) -> "的" x0
+np(x0:nns) -> x0
+np(x0:np x1:vp) -> x1 "的" x0
+np(x0:np x1:vp) -> x1 x0
+s(x0:np x1:vp x2:.) -> x0 x1 x2
+vbp("include") -> "中包括"
+vp(vbg("coming") pp(in("from") x0:np)) -> "来自" x0
+vp(vbg("coming") pp(in("from") x0:np)) -> "来自" x0 "的"
+vp(x0:vbp x1:np) -> x0 x1

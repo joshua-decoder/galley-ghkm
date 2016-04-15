@@ -1,0 +1,18 @@
+Properties: {eParsedCorpus=astronauts.ptb, fCorpus=astronauts.f, align=astronauts.a}
+line 0 (secs = 0.017, totalmem = 723m, freemem = 719m, rules=0, lhs=0, rhs=0, root=0)...
+Exception at lineNb: 0
+RuleExtractor: extractRules: lineNb: 0
+RuleExtractor: extractRules: f: 这 7人 中包括 来自 法国 的 宇航 员 .
+RuleExtractor: extractRules: e: null
+RuleExtractor: extractRules: a: 0-0 1-1 2-1 3-2 4-6 4-7 5-3 6-3 7-4 8-8
+Exception in thread "main" java.lang.RuntimeException: java.lang.ArrayIndexOutOfBoundsException: 0
+	at edu.stanford.nlp.mt.syntax.ghkm.RuleExtractor.extractRules(RuleExtractor.java:261)
+	at edu.stanford.nlp.mt.syntax.ghkm.RuleExtractor.main(RuleExtractor.java:410)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 0
+	at edu.stanford.nlp.mt.syntax.ghkm.Rule.get_lhs_non_terminal(Rule.java:299)
+	at edu.stanford.nlp.mt.syntax.ghkm.Rule.getAllRHSVariants(Rule.java:95)
+	at edu.stanford.nlp.mt.syntax.ghkm.RuleInstance.getAllRHSVariants(RuleInstance.java:193)
+	at edu.stanford.nlp.mt.syntax.ghkm.AlignmentGraph.extractRules(AlignmentGraph.java:154)
+	at edu.stanford.nlp.mt.syntax.ghkm.RuleExtractor.processLine(RuleExtractor.java:165)
+	at edu.stanford.nlp.mt.syntax.ghkm.RuleExtractor.extractRules(RuleExtractor.java:250)
+	... 1 more

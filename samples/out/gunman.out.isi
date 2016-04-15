@@ -1,0 +1,10 @@
+.(".") -> "."
+in("by") -> "by"
+nn("gunmen") -> "gunman"
+nn("police") -> "police"
+np(dt("the") x0:nn) -> x0
+pp(x0:in x1:np) -> x0 x1
+s(x0:np x1:vp x2:.) -> x0 x1 x2
+vbn("killed") -> "killed"
+vp(vbd("were") x0:vp) -> x0
+vp(x0:vbn x1:pp) -> x1 x0

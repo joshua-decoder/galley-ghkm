@@ -1,0 +1,195 @@
+jj("collapsed") -> "倒塌"
+jj("collapsed") -> "倒塌" "的"
+nn("rescue") -> "救援"
+nns("houses") -> "房屋"
+nns("houses") -> "的" "房屋"
+nns("survivors") -> "生还者"
+nns("workers") -> "人员"
+np(jj("collapsed") nns("houses")) -> "倒塌" "的" "房屋"
+np(jj("collapsed") x0:nns) -> "倒塌" "的" x0
+np(jj("collapsed") x0:nns) -> "倒塌" x0
+np(nn("rescue") nns("workers")) -> "救援" "人员"
+np(nn("rescue") x0:nns) -> "救援" x0
+np(nns("survivors")) -> "生还者"
+np(x0:jj nns("houses")) -> x0 "房屋"
+np(x0:jj nns("houses")) -> x0 "的" "房屋"
+np(x0:jj x1:nns) -> x0 "的" x1
+np(x0:jj x1:nns) -> x0 x1
+np(x0:nn nns("workers")) -> x0 "人员"
+np(x0:nn x1:nns) -> x0 x1
+np(x0:nns) -> x0
+pp(in("in") np(jj("collapsed") nns("houses"))) -> "在" "倒塌" "的" "房屋" "里"
+pp(in("in") np(jj("collapsed") x0:nns)) -> "在" "倒塌" "的" x0 "里"
+pp(in("in") np(jj("collapsed") x0:nns)) -> "在" "倒塌" x0 "里"
+pp(in("in") np(x0:jj nns("houses"))) -> "在" x0 "房屋" "里"
+pp(in("in") np(x0:jj nns("houses"))) -> "在" x0 "的" "房屋" "里"
+pp(in("in") np(x0:jj x1:nns)) -> "在" x0 "的" x1 "里"
+pp(in("in") np(x0:jj x1:nns)) -> "在" x0 x1 "里"
+pp(in("in") x0:np) -> "在" x0 "里"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") nns("houses"))))) -> "救援" "人员" "在" "倒塌" "的" "房屋" "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x0:nns)))) -> "救援" "人员" "在" "倒塌" "的" x0 "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x0:nns)))) -> "救援" "人员" "在" "倒塌" x0 "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj nns("houses"))))) -> "救援" "人员" "在" x0 "房屋" "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj nns("houses"))))) -> "救援" "人员" "在" x0 "的" "房屋" "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj x1:nns)))) -> "救援" "人员" "在" x0 "的" x1 "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj x1:nns)))) -> "救援" "人员" "在" x0 x1 "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") x0:np))) -> "救援" "人员" "在" x0 "里" "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) x0:pp)) -> "救援" "人员" x0 "寻找" "生还者"
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(jj("collapsed") nns("houses"))))) -> "救援" "人员" "在" "倒塌" "的" "房屋" "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(jj("collapsed") x1:nns)))) -> "救援" "人员" "在" "倒塌" "的" x1 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(jj("collapsed") x1:nns)))) -> "救援" "人员" "在" "倒塌" x1 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj nns("houses"))))) -> "救援" "人员" "在" x1 "房屋" "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj nns("houses"))))) -> "救援" "人员" "在" x1 "的" "房屋" "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj x2:nns)))) -> "救援" "人员" "在" x1 "的" x2 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj x2:nns)))) -> "救援" "人员" "在" x1 x2 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") x1:np))) -> "救援" "人员" "在" x1 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") np(x0:nns)) x1:pp)) -> "救援" "人员" x1 "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(jj("collapsed") nns("houses"))))) -> "救援" "人员" "在" "倒塌" "的" "房屋" "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(jj("collapsed") x1:nns)))) -> "救援" "人员" "在" "倒塌" "的" x1 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(jj("collapsed") x1:nns)))) -> "救援" "人员" "在" "倒塌" x1 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj nns("houses"))))) -> "救援" "人员" "在" x1 "房屋" "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj nns("houses"))))) -> "救援" "人员" "在" x1 "的" "房屋" "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj x2:nns)))) -> "救援" "人员" "在" x1 "的" x2 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj x2:nns)))) -> "救援" "人员" "在" x1 x2 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) pp(in("in") x1:np))) -> "救援" "人员" "在" x1 "里" "寻找" x0
+s(np(nn("rescue") nns("workers")) vp(vbp("search") pp(in("for") x0:np) x1:pp)) -> "救援" "人员" x1 "寻找" x0
+s(np(nn("rescue") nns("workers")) x0:vp) -> "救援" "人员" x0
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") nns("houses"))))) -> "救援" x0 "在" "倒塌" "的" "房屋" "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x1:nns)))) -> "救援" x0 "在" "倒塌" "的" x1 "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x1:nns)))) -> "救援" x0 "在" "倒塌" x1 "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj nns("houses"))))) -> "救援" x0 "在" x1 "房屋" "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj nns("houses"))))) -> "救援" x0 "在" x1 "的" "房屋" "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj x2:nns)))) -> "救援" x0 "在" x1 "的" x2 "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj x2:nns)))) -> "救援" x0 "在" x1 x2 "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") x1:np))) -> "救援" x0 "在" x1 "里" "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) x1:pp)) -> "救援" x0 x1 "寻找" "生还者"
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") nns("houses"))))) -> "救援" x0 "在" "倒塌" "的" "房屋" "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") x2:nns)))) -> "救援" x0 "在" "倒塌" "的" x2 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") x2:nns)))) -> "救援" x0 "在" "倒塌" x2 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj nns("houses"))))) -> "救援" x0 "在" x2 "房屋" "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj nns("houses"))))) -> "救援" x0 "在" x2 "的" "房屋" "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj x3:nns)))) -> "救援" x0 "在" x2 "的" x3 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj x3:nns)))) -> "救援" x0 "在" x2 x3 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") x2:np))) -> "救援" x0 "在" x2 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") np(x1:nns)) x2:pp)) -> "救援" x0 x2 "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") nns("houses"))))) -> "救援" x0 "在" "倒塌" "的" "房屋" "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") x2:nns)))) -> "救援" x0 "在" "倒塌" "的" x2 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") x2:nns)))) -> "救援" x0 "在" "倒塌" x2 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj nns("houses"))))) -> "救援" x0 "在" x2 "房屋" "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj nns("houses"))))) -> "救援" x0 "在" x2 "的" "房屋" "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj x3:nns)))) -> "救援" x0 "在" x2 "的" x3 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj x3:nns)))) -> "救援" x0 "在" x2 x3 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) pp(in("in") x2:np))) -> "救援" x0 "在" x2 "里" "寻找" x1
+s(np(nn("rescue") x0:nns) vp(vbp("search") pp(in("for") x1:np) x2:pp)) -> "救援" x0 x2 "寻找" x1
+s(np(nn("rescue") x0:nns) x1:vp) -> "救援" x0 x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 "人员" "在" "倒塌" "的" "房屋" "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x1:nns)))) -> x0 "人员" "在" "倒塌" "的" x1 "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x1:nns)))) -> x0 "人员" "在" "倒塌" x1 "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj nns("houses"))))) -> x0 "人员" "在" x1 "房屋" "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj nns("houses"))))) -> x0 "人员" "在" x1 "的" "房屋" "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj x2:nns)))) -> x0 "人员" "在" x1 "的" x2 "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj x2:nns)))) -> x0 "人员" "在" x1 x2 "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") x1:np))) -> x0 "人员" "在" x1 "里" "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(nns("survivors"))) x1:pp)) -> x0 "人员" x1 "寻找" "生还者"
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 "人员" "在" "倒塌" "的" "房屋" "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "人员" "在" "倒塌" "的" x2 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "人员" "在" "倒塌" x2 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "人员" "在" x2 "房屋" "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "人员" "在" x2 "的" "房屋" "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj x3:nns)))) -> x0 "人员" "在" x2 "的" x3 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj x3:nns)))) -> x0 "人员" "在" x2 x3 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") x2:np))) -> x0 "人员" "在" x2 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") np(x1:nns)) x2:pp)) -> x0 "人员" x2 "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 "人员" "在" "倒塌" "的" "房屋" "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "人员" "在" "倒塌" "的" x2 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "人员" "在" "倒塌" x2 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "人员" "在" x2 "房屋" "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "人员" "在" x2 "的" "房屋" "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj x3:nns)))) -> x0 "人员" "在" x2 "的" x3 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj x3:nns)))) -> x0 "人员" "在" x2 x3 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) pp(in("in") x2:np))) -> x0 "人员" "在" x2 "里" "寻找" x1
+s(np(x0:nn nns("workers")) vp(vbp("search") pp(in("for") x1:np) x2:pp)) -> x0 "人员" x2 "寻找" x1
+s(np(x0:nn nns("workers")) x1:vp) -> x0 "人员" x1
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 x1 "在" "倒塌" "的" "房屋" "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 x1 "在" "倒塌" "的" x2 "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 x1 "在" "倒塌" x2 "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x2:jj nns("houses"))))) -> x0 x1 "在" x2 "房屋" "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x2:jj nns("houses"))))) -> x0 x1 "在" x2 "的" "房屋" "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x2:jj x3:nns)))) -> x0 x1 "在" x2 "的" x3 "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x2:jj x3:nns)))) -> x0 x1 "在" x2 x3 "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") x2:np))) -> x0 x1 "在" x2 "里" "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(nns("survivors"))) x2:pp)) -> x0 x1 x2 "寻找" "生还者"
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 x1 "在" "倒塌" "的" "房屋" "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") np(jj("collapsed") x3:nns)))) -> x0 x1 "在" "倒塌" "的" x3 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") np(jj("collapsed") x3:nns)))) -> x0 x1 "在" "倒塌" x3 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") np(x3:jj nns("houses"))))) -> x0 x1 "在" x3 "房屋" "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") np(x3:jj nns("houses"))))) -> x0 x1 "在" x3 "的" "房屋" "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") np(x3:jj x4:nns)))) -> x0 x1 "在" x3 "的" x4 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") np(x3:jj x4:nns)))) -> x0 x1 "在" x3 x4 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) pp(in("in") x3:np))) -> x0 x1 "在" x3 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") np(x2:nns)) x3:pp)) -> x0 x1 x3 "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 x1 "在" "倒塌" "的" "房屋" "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") np(jj("collapsed") x3:nns)))) -> x0 x1 "在" "倒塌" "的" x3 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") np(jj("collapsed") x3:nns)))) -> x0 x1 "在" "倒塌" x3 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") np(x3:jj nns("houses"))))) -> x0 x1 "在" x3 "房屋" "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") np(x3:jj nns("houses"))))) -> x0 x1 "在" x3 "的" "房屋" "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") np(x3:jj x4:nns)))) -> x0 x1 "在" x3 "的" x4 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") np(x3:jj x4:nns)))) -> x0 x1 "在" x3 x4 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) pp(in("in") x3:np))) -> x0 x1 "在" x3 "里" "寻找" x2
+s(np(x0:nn x1:nns) vp(vbp("search") pp(in("for") x2:np) x3:pp)) -> x0 x1 x3 "寻找" x2
+s(np(x0:nn x1:nns) x2:vp) -> x0 x1 x2
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 "在" "倒塌" "的" "房屋" "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x1:nns)))) -> x0 "在" "倒塌" "的" x1 "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x1:nns)))) -> x0 "在" "倒塌" x1 "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj nns("houses"))))) -> x0 "在" x1 "房屋" "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj nns("houses"))))) -> x0 "在" x1 "的" "房屋" "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj x2:nns)))) -> x0 "在" x1 "的" x2 "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x1:jj x2:nns)))) -> x0 "在" x1 x2 "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") x1:np))) -> x0 "在" x1 "里" "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(nns("survivors"))) x1:pp)) -> x0 x1 "寻找" "生还者"
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 "在" "倒塌" "的" "房屋" "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "在" "倒塌" "的" x2 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "在" "倒塌" x2 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "在" x2 "房屋" "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "在" x2 "的" "房屋" "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj x3:nns)))) -> x0 "在" x2 "的" x3 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") np(x2:jj x3:nns)))) -> x0 "在" x2 x3 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) pp(in("in") x2:np))) -> x0 "在" x2 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") np(x1:nns)) x2:pp)) -> x0 x2 "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") nns("houses"))))) -> x0 "在" "倒塌" "的" "房屋" "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "在" "倒塌" "的" x2 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(jj("collapsed") x2:nns)))) -> x0 "在" "倒塌" x2 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "在" x2 "房屋" "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj nns("houses"))))) -> x0 "在" x2 "的" "房屋" "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj x3:nns)))) -> x0 "在" x2 "的" x3 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") np(x2:jj x3:nns)))) -> x0 "在" x2 x3 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) pp(in("in") x2:np))) -> x0 "在" x2 "里" "寻找" x1
+s(x0:np vp(vbp("search") pp(in("for") x1:np) x2:pp)) -> x0 x2 "寻找" x1
+s(x0:np x1:vp) -> x0 x1
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") nns("houses")))) -> "在" "倒塌" "的" "房屋" "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x0:nns))) -> "在" "倒塌" "的" x0 "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(jj("collapsed") x0:nns))) -> "在" "倒塌" x0 "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj nns("houses")))) -> "在" x0 "房屋" "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj nns("houses")))) -> "在" x0 "的" "房屋" "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj x1:nns))) -> "在" x0 "的" x1 "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") np(x0:jj x1:nns))) -> "在" x0 x1 "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) pp(in("in") x0:np)) -> "在" x0 "里" "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(nns("survivors"))) x0:pp) -> x0 "寻找" "生还者"
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(jj("collapsed") nns("houses")))) -> "在" "倒塌" "的" "房屋" "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(jj("collapsed") x1:nns))) -> "在" "倒塌" "的" x1 "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(jj("collapsed") x1:nns))) -> "在" "倒塌" x1 "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj nns("houses")))) -> "在" x1 "房屋" "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj nns("houses")))) -> "在" x1 "的" "房屋" "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj x2:nns))) -> "在" x1 "的" x2 "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") np(x1:jj x2:nns))) -> "在" x1 x2 "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) pp(in("in") x1:np)) -> "在" x1 "里" "寻找" x0
+vp(vbp("search") pp(in("for") np(x0:nns)) x1:pp) -> x1 "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(jj("collapsed") nns("houses")))) -> "在" "倒塌" "的" "房屋" "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(jj("collapsed") x1:nns))) -> "在" "倒塌" "的" x1 "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(jj("collapsed") x1:nns))) -> "在" "倒塌" x1 "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj nns("houses")))) -> "在" x1 "房屋" "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj nns("houses")))) -> "在" x1 "的" "房屋" "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj x2:nns))) -> "在" x1 "的" x2 "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") np(x1:jj x2:nns))) -> "在" x1 x2 "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) pp(in("in") x1:np)) -> "在" x1 "里" "寻找" x0
+vp(vbp("search") pp(in("for") x0:np) x1:pp) -> x1 "寻找" x0

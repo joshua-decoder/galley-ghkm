@@ -1,0 +1,139 @@
+.(".") -> "."
+in("by") -> "by"
+nn("gunmen") -> "gunman"
+nn("police") -> "police"
+np(dt("the") nn("gunmen")) -> "gunman"
+np(dt("the") nn("police")) -> "police"
+np(dt("the") x0:nn) -> x0
+pp(in("by") np(dt("the") nn("police"))) -> "by" "police"
+pp(in("by") np(dt("the") x0:nn)) -> "by" x0
+pp(in("by") x0:np) -> "by" x0
+pp(x0:in np(dt("the") nn("police"))) -> x0 "police"
+pp(x0:in np(dt("the") x1:nn)) -> x0 x1
+pp(x0:in x1:np) -> x0 x1
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") nn("police"))))) .(".")) -> "gunman" "by" "police" "killed" "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") nn("police"))))) x0:.) -> "gunman" "by" "police" "killed" x0
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") x0:nn)))) .(".")) -> "gunman" "by" x0 "killed" "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") x0:nn)))) x1:.) -> "gunman" "by" x0 "killed" x1
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(in("by") x0:np))) .(".")) -> "gunman" "by" x0 "killed" "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(in("by") x0:np))) x1:.) -> "gunman" "by" x0 "killed" x1
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(x0:in np(dt("the") nn("police"))))) .(".")) -> "gunman" x0 "police" "killed" "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(x0:in np(dt("the") nn("police"))))) x1:.) -> "gunman" x0 "police" "killed" x1
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(x0:in np(dt("the") x1:nn)))) .(".")) -> "gunman" x0 x1 "killed" "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(x0:in np(dt("the") x1:nn)))) x2:.) -> "gunman" x0 x1 "killed" x2
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(x0:in x1:np))) .(".")) -> "gunman" x0 x1 "killed" "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") pp(x0:in x1:np))) x2:.) -> "gunman" x0 x1 "killed" x2
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") x0:pp)) .(".")) -> "gunman" x0 "killed" "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(vbn("killed") x0:pp)) x1:.) -> "gunman" x0 "killed" x1
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(in("by") np(dt("the") nn("police"))))) .(".")) -> "gunman" "by" "police" x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(in("by") np(dt("the") nn("police"))))) x1:.) -> "gunman" "by" "police" x0 x1
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(in("by") np(dt("the") x1:nn)))) .(".")) -> "gunman" "by" x1 x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(in("by") np(dt("the") x1:nn)))) x2:.) -> "gunman" "by" x1 x0 x2
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(in("by") x1:np))) .(".")) -> "gunman" "by" x1 x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(in("by") x1:np))) x2:.) -> "gunman" "by" x1 x0 x2
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(x1:in np(dt("the") nn("police"))))) .(".")) -> "gunman" x1 "police" x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(x1:in np(dt("the") nn("police"))))) x2:.) -> "gunman" x1 "police" x0 x2
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(x1:in np(dt("the") x2:nn)))) .(".")) -> "gunman" x1 x2 x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(x1:in np(dt("the") x2:nn)))) x3:.) -> "gunman" x1 x2 x0 x3
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(x1:in x2:np))) .(".")) -> "gunman" x1 x2 x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn pp(x1:in x2:np))) x3:.) -> "gunman" x1 x2 x0 x3
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn x1:pp)) .(".")) -> "gunman" x1 x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") vp(x0:vbn x1:pp)) x2:.) -> "gunman" x1 x0 x2
+s(np(dt("the") nn("gunmen")) vp(vbd("were") x0:vp) .(".")) -> "gunman" x0 "."
+s(np(dt("the") nn("gunmen")) vp(vbd("were") x0:vp) x1:.) -> "gunman" x0 x1
+s(np(dt("the") nn("gunmen")) x0:vp .(".")) -> "gunman" x0 "."
+s(np(dt("the") nn("gunmen")) x0:vp x1:.) -> "gunman" x0 x1
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") nn("police"))))) .(".")) -> x0 "by" "police" "killed" "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") nn("police"))))) x1:.) -> x0 "by" "police" "killed" x1
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") x1:nn)))) .(".")) -> x0 "by" x1 "killed" "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") x1:nn)))) x2:.) -> x0 "by" x1 "killed" x2
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(in("by") x1:np))) .(".")) -> x0 "by" x1 "killed" "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(in("by") x1:np))) x2:.) -> x0 "by" x1 "killed" x2
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") nn("police"))))) .(".")) -> x0 x1 "police" "killed" "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") nn("police"))))) x2:.) -> x0 x1 "police" "killed" x2
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") x2:nn)))) .(".")) -> x0 x1 x2 "killed" "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") x2:nn)))) x3:.) -> x0 x1 x2 "killed" x3
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(x1:in x2:np))) .(".")) -> x0 x1 x2 "killed" "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") pp(x1:in x2:np))) x3:.) -> x0 x1 x2 "killed" x3
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") x1:pp)) .(".")) -> x0 x1 "killed" "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(vbn("killed") x1:pp)) x2:.) -> x0 x1 "killed" x2
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") nn("police"))))) .(".")) -> x0 "by" "police" x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") nn("police"))))) x2:.) -> x0 "by" "police" x1 x2
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") x2:nn)))) .(".")) -> x0 "by" x2 x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") x2:nn)))) x3:.) -> x0 "by" x2 x1 x3
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(in("by") x2:np))) .(".")) -> x0 "by" x2 x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(in("by") x2:np))) x3:.) -> x0 "by" x2 x1 x3
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") nn("police"))))) .(".")) -> x0 x2 "police" x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") nn("police"))))) x3:.) -> x0 x2 "police" x1 x3
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") x3:nn)))) .(".")) -> x0 x2 x3 x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") x3:nn)))) x4:.) -> x0 x2 x3 x1 x4
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(x2:in x3:np))) .(".")) -> x0 x2 x3 x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn pp(x2:in x3:np))) x4:.) -> x0 x2 x3 x1 x4
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn x2:pp)) .(".")) -> x0 x2 x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") vp(x1:vbn x2:pp)) x3:.) -> x0 x2 x1 x3
+s(np(dt("the") x0:nn) vp(vbd("were") x1:vp) .(".")) -> x0 x1 "."
+s(np(dt("the") x0:nn) vp(vbd("were") x1:vp) x2:.) -> x0 x1 x2
+s(np(dt("the") x0:nn) x1:vp .(".")) -> x0 x1 "."
+s(np(dt("the") x0:nn) x1:vp x2:.) -> x0 x1 x2
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") nn("police"))))) .(".")) -> x0 "by" "police" "killed" "."
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") nn("police"))))) x1:.) -> x0 "by" "police" "killed" x1
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") x1:nn)))) .(".")) -> x0 "by" x1 "killed" "."
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") x1:nn)))) x2:.) -> x0 "by" x1 "killed" x2
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(in("by") x1:np))) .(".")) -> x0 "by" x1 "killed" "."
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(in("by") x1:np))) x2:.) -> x0 "by" x1 "killed" x2
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") nn("police"))))) .(".")) -> x0 x1 "police" "killed" "."
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") nn("police"))))) x2:.) -> x0 x1 "police" "killed" x2
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") x2:nn)))) .(".")) -> x0 x1 x2 "killed" "."
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(x1:in np(dt("the") x2:nn)))) x3:.) -> x0 x1 x2 "killed" x3
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(x1:in x2:np))) .(".")) -> x0 x1 x2 "killed" "."
+s(x0:np vp(vbd("were") vp(vbn("killed") pp(x1:in x2:np))) x3:.) -> x0 x1 x2 "killed" x3
+s(x0:np vp(vbd("were") vp(vbn("killed") x1:pp)) .(".")) -> x0 x1 "killed" "."
+s(x0:np vp(vbd("were") vp(vbn("killed") x1:pp)) x2:.) -> x0 x1 "killed" x2
+s(x0:np vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") nn("police"))))) .(".")) -> x0 "by" "police" x1 "."
+s(x0:np vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") nn("police"))))) x2:.) -> x0 "by" "police" x1 x2
+s(x0:np vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") x2:nn)))) .(".")) -> x0 "by" x2 x1 "."
+s(x0:np vp(vbd("were") vp(x1:vbn pp(in("by") np(dt("the") x2:nn)))) x3:.) -> x0 "by" x2 x1 x3
+s(x0:np vp(vbd("were") vp(x1:vbn pp(in("by") x2:np))) .(".")) -> x0 "by" x2 x1 "."
+s(x0:np vp(vbd("were") vp(x1:vbn pp(in("by") x2:np))) x3:.) -> x0 "by" x2 x1 x3
+s(x0:np vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") nn("police"))))) .(".")) -> x0 x2 "police" x1 "."
+s(x0:np vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") nn("police"))))) x3:.) -> x0 x2 "police" x1 x3
+s(x0:np vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") x3:nn)))) .(".")) -> x0 x2 x3 x1 "."
+s(x0:np vp(vbd("were") vp(x1:vbn pp(x2:in np(dt("the") x3:nn)))) x4:.) -> x0 x2 x3 x1 x4
+s(x0:np vp(vbd("were") vp(x1:vbn pp(x2:in x3:np))) .(".")) -> x0 x2 x3 x1 "."
+s(x0:np vp(vbd("were") vp(x1:vbn pp(x2:in x3:np))) x4:.) -> x0 x2 x3 x1 x4
+s(x0:np vp(vbd("were") vp(x1:vbn x2:pp)) .(".")) -> x0 x2 x1 "."
+s(x0:np vp(vbd("were") vp(x1:vbn x2:pp)) x3:.) -> x0 x2 x1 x3
+s(x0:np vp(vbd("were") x1:vp) .(".")) -> x0 x1 "."
+s(x0:np vp(vbd("were") x1:vp) x2:.) -> x0 x1 x2
+s(x0:np x1:vp .(".")) -> x0 x1 "."
+s(x0:np x1:vp x2:.) -> x0 x1 x2
+vbn("killed") -> "killed"
+vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") nn("police"))))) -> "by" "police" "killed"
+vp(vbd("were") vp(vbn("killed") pp(in("by") np(dt("the") x0:nn)))) -> "by" x0 "killed"
+vp(vbd("were") vp(vbn("killed") pp(in("by") x0:np))) -> "by" x0 "killed"
+vp(vbd("were") vp(vbn("killed") pp(x0:in np(dt("the") nn("police"))))) -> x0 "police" "killed"
+vp(vbd("were") vp(vbn("killed") pp(x0:in np(dt("the") x1:nn)))) -> x0 x1 "killed"
+vp(vbd("were") vp(vbn("killed") pp(x0:in x1:np))) -> x0 x1 "killed"
+vp(vbd("were") vp(vbn("killed") x0:pp)) -> x0 "killed"
+vp(vbd("were") vp(x0:vbn pp(in("by") np(dt("the") nn("police"))))) -> "by" "police" x0
+vp(vbd("were") vp(x0:vbn pp(in("by") np(dt("the") x1:nn)))) -> "by" x1 x0
+vp(vbd("were") vp(x0:vbn pp(in("by") x1:np))) -> "by" x1 x0
+vp(vbd("were") vp(x0:vbn pp(x1:in np(dt("the") nn("police"))))) -> x1 "police" x0
+vp(vbd("were") vp(x0:vbn pp(x1:in np(dt("the") x2:nn)))) -> x1 x2 x0
+vp(vbd("were") vp(x0:vbn pp(x1:in x2:np))) -> x1 x2 x0
+vp(vbd("were") vp(x0:vbn x1:pp)) -> x1 x0
+vp(vbd("were") x0:vp) -> x0
+vp(vbn("killed") pp(in("by") np(dt("the") nn("police")))) -> "by" "police" "killed"
+vp(vbn("killed") pp(in("by") np(dt("the") x0:nn))) -> "by" x0 "killed"
+vp(vbn("killed") pp(in("by") x0:np)) -> "by" x0 "killed"
+vp(vbn("killed") pp(x0:in np(dt("the") nn("police")))) -> x0 "police" "killed"
+vp(vbn("killed") pp(x0:in np(dt("the") x1:nn))) -> x0 x1 "killed"
+vp(vbn("killed") pp(x0:in x1:np)) -> x0 x1 "killed"
+vp(vbn("killed") x0:pp) -> x0 "killed"
+vp(x0:vbn pp(in("by") np(dt("the") nn("police")))) -> "by" "police" x0
+vp(x0:vbn pp(in("by") np(dt("the") x1:nn))) -> "by" x1 x0
+vp(x0:vbn pp(in("by") x1:np)) -> "by" x1 x0
+vp(x0:vbn pp(x1:in np(dt("the") nn("police")))) -> x1 "police" x0
+vp(x0:vbn pp(x1:in np(dt("the") x2:nn))) -> x1 x2 x0
+vp(x0:vbn pp(x1:in x2:np)) -> x1 x2 x0
+vp(x0:vbn x1:pp) -> x1 x0

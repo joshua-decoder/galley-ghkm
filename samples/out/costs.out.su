@@ -1,0 +1,40 @@
+jj("direct") -> "直"
+jj("taiwanese") -> "台资"
+nn("benefit") -> "效益"
+nn("benefit") -> "效益" ","
+nn("operating") -> "经营"
+nn("transport") -> "航"
+nn("transport") -> "航" "的"
+nns("costs") -> "成本"
+nns("enterprises") -> "企业"
+np(dt("the") x0:jj x1:nn) -> "的" x0 x1
+np(dt("the") x0:jj x1:nn) -> "的" x0 x1 ","
+np(dt("the") x0:jj x1:nn) -> x0 x1
+np(dt("the") x0:jj x1:nn) -> x0 x1 ","
+np(prp$("their") x0:nn x1:nns x2:punc.) -> x0 x1 x2
+np(vbn("specified") nns("sites")) -> "定点"
+np(x0:jj x1:nn) -> x0 x1
+np(x0:jj x1:nn) -> x0 x1 "的"
+np(x0:jj x1:nns) -> x0 x1
+np(x0:np x1:pp x2:pp) -> x2 x1 "的" x0
+np(x0:np x1:pp x2:pp) -> x2 x1 "的" x0 ","
+np(x0:np x1:pp x2:pp) -> x2 x1 x0
+np(x0:np x1:pp x2:pp) -> x2 x1 x0 ","
+pp(in("at") x0:np) -> x0
+pp(in("of") x0:np) -> x0
+pp(in("of") x0:np) -> x0 "的"
+punc.(".") -> ";"
+s(x0:np x1:vp) -> x0 x1
+s(x0:sg x1:vp) -> x0 "," x1
+s(x0:sg x1:vp) -> x0 x1
+sg(x0:vp) -> x0
+sg(x0:vp) -> x0 ","
+vb("lower") -> "降低"
+vbg("using") -> "利用"
+vbz("helps") -> "," "帮助"
+vbz("helps") -> "帮助"
+vp(x0:vb x1:np) -> x0 x1
+vp(x0:vbg x1:np) -> x0 x1
+vp(x0:vbg x1:np) -> x0 x1 ","
+vp(x0:vbz x1:s) -> "," x0 x1
+vp(x0:vbz x1:s) -> x0 x1
